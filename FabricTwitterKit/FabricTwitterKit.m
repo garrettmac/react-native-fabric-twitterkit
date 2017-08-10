@@ -90,6 +90,17 @@ RCT_EXPORT_METHOD(Api:(NSDictionary *)options :(RCTResponseSenderBlock)callback)
 
 RCT_EXPORT_METHOD(login:(RCTResponseSenderBlock)callback)
 {
+    
+    
+//     [[Twitter sharedInstance] logInWithCompletion:^(TWTRSession *session, NSError *error) {
+//   if (session) {
+//       NSLog(@"signed in as %@", [session userName]);
+//   } else {
+//       NSLog(@"error: %@", [error localizedDescription]);
+//   }
+// }];
+    
+    
     [[Twitter sharedInstance] logInWithCompletion:^(TWTRSession *session, NSError *error) {
         if (session) {
             NSDictionary *body = @{@"authToken": session.authToken,
